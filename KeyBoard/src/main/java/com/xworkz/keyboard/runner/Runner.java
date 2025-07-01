@@ -82,7 +82,7 @@ public class Runner {
 
         GlassEntity glass = eM.find(GlassEntity.class ,1);
         BottelEntity bottel = eM.find(BottelEntity.class,1);
-
+        System.out.println(glass.toString());
         eT.commit();
         eM.close();
 

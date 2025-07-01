@@ -1,11 +1,13 @@
 package com.xworkz.keyboard.entity;
 
 
+import lombok.ToString;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+@ToString
 @Entity
 @Table(name = "glass_table")
 public class GlassEntity {

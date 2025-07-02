@@ -19,16 +19,34 @@ public class Restaurant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
+    @Column(name = "restaurant_name")
     private String name;
 
-    @Column
-    private String price;
+    @Column(name = "restaurant_price")
+    private int price;
 
-    @Column
+    @Column(name = "noofroom")
     private int noOfRoom;
 
-    @Column
+    @Column(name = "noofPeople")
     private int noOfPeople;
 
+
+    public Restaurant(String name, int price, int noOfRoom, int noOfPeople) {
+        this.name = name;
+        this.price = price;
+        this.noOfRoom = noOfRoom;
+        this.noOfPeople = noOfPeople;
+    }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", noOfRoom=" + noOfRoom +
+                ", noOfPeople=" + noOfPeople +
+                '}';
+    }
 }

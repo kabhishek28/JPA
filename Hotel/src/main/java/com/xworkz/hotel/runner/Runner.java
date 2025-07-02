@@ -1,6 +1,7 @@
 package com.xworkz.hotel.runner;
 
 import com.xworkz.hotel.entity.FoodItems;
+import com.xworkz.hotel.entity.Restaurant;
 import org.w3c.dom.ls.LSException;
 
 import javax.persistence.EntityManager;
@@ -29,11 +30,26 @@ public class Runner {
         foodItems.add( new FoodItems("Pizza", 250, "Medium Size"));
 
 
-        List
+        List<Restaurant> restaurantList = new ArrayList<>();
+        restaurantList.add(new Restaurant("Sagar" , 250 ,1,2));
+        restaurantList.add(new Restaurant("Spice Garden", 400, 2, 4));
+        restaurantList.add(new Restaurant("Tandoori Nights", 550, 3, 5));
+        restaurantList.add(new Restaurant("Green Bowl", 180, 1, 3));
+        restaurantList.add(new Restaurant("Royal Feast", 700, 4, 5));
+        restaurantList.add(new Restaurant("Urban Tadka", 350, 2, 4));
+        restaurantList.add(new Restaurant("Coastal Catch", 500, 3, 5));
+        restaurantList.add(new Restaurant("Veggie Delight", 220, 1, 3));
+        restaurantList.add(new Restaurant("Flavors of India", 600, 4, 5));
+        restaurantList.add(new Restaurant("Quick Bites", 150, 1, 2));
         try{
             eM.getTransaction().begin();
-            for(FoodItems foodItem : foodItems) {
-                eM.persist(foodItem);
+//            for(FoodItems foodItem : foodItems) {
+//                eM.persist(foodItem);
+//            }
+
+            for(Restaurant restaurant : restaurantList){
+//                eM.persist(restaurant);
+                eM.contains(restaurantList.toString());
             }
             eM.getTransaction().commit();
         }catch (Exception  e){

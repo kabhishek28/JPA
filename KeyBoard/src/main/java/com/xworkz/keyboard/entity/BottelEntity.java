@@ -28,5 +28,12 @@ public class BottelEntity {
     @Column(name = "bottel_size")
     int sizeOfTheBottle;
 
-
+    @Override
+    public String toString() {
+        return "BottelEntity{" +
+                "id=" + id +
+                ", shape='" + shape + '\'' +
+                ", sizeOfTheBottle=" + sizeOfTheBottle +
+                '}';
+    }
 }

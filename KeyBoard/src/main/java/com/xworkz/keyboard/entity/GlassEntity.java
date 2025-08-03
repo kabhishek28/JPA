@@ -41,4 +41,12 @@ public GlassEntity(){
     public String getGlassType() {
         return glassType;
     }
+
+    @Override
+    public String toString() {
+        return "GlassEntity{" +
+                "id=" + id +
+                ", glassType='" + glassType + '\'' +
+                '}';
+    }
 }

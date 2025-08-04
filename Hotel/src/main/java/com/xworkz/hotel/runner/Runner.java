@@ -47,13 +47,18 @@ public class Runner {
 //                eM.persist(foodItem);
 //            }
 
-            for(Restaurant restaurant : restaurantList){
-//                eM.persist(restaurant);
-                eM.contains(restaurantList.toString());
-            }
+//            for(Restaurant restaurant : restaurantList){
+////                eM.persist(restaurant);
+//                eM.contains(restaurantList.toString());
+//            }
+            FoodItems foodItems1 = eM.find(FoodItems.class,3);
+            foodItems1.setFoodPrice(60);
+            eM.merge(foodItems1);
             eM.getTransaction().commit();
         }catch (Exception  e){
-            System.out.println(e);
+            if(eM.getTransaction().isActive()){
+                eM.getTransaction().rollback();
+            }
         }
         finally {
             eM.close();

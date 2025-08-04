@@ -12,11 +12,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "x-workz_btm_table")
+@Table(name = "x_workz_btm_table")
 public class XworkzBTMEntity {
 
     @Id
-    @Column(name = "id")
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
@@ -31,4 +31,11 @@ public class XworkzBTMEntity {
 
     @Column(name = "no_of_student")
     private int noOfStudent;
+
+    public XworkzBTMEntity(String nameOfTheHead, String branchName ,int noOfStaff,  int noOfStudent) {
+        this.NameOfTheHead = nameOfTheHead;
+        this.noOfStaff = noOfStaff;
+        this.branchName = branchName;
+        this.noOfStudent = noOfStudent;
+    }
 }

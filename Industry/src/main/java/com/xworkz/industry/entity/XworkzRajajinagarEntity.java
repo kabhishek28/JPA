@@ -12,11 +12,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 
 @Entity
-@Table(name = "x-workz_rajajinagar_table")
+@Table(name = "x_workz_rajajinagar_table")
 public class XworkzRajajinagarEntity {
 
     @Id
-    @Column(name = "id")
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
@@ -31,4 +31,11 @@ public class XworkzRajajinagarEntity {
 
     @Column(name = "no_of_student")
     private int noOfStudent;
+
+    public XworkzRajajinagarEntity(String nameOfTheHead, String branchName, int noOfStaff, int noOfStudent) {
+        this.NameOfTheHead = nameOfTheHead;
+        this.branchName = branchName;
+        this.noOfStaff = noOfStaff;
+        this.noOfStudent = noOfStudent;
+    }
 }

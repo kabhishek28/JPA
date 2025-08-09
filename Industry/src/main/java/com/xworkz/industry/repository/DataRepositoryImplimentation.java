@@ -14,7 +14,6 @@ public class DataRepositoryImplimentation implements DataRepository{
     EntityManager entityManager = null ;
     EntityTransaction entityTransaction = null ;
 
-
     @Override
     public void insertRajajinagar(XworkzRajajinagarEntity xworkzRajajinagarEntity) {
         entityManagerFactory = Persistence.createEntityManagerFactory("industryUnit");
